@@ -2,15 +2,14 @@ package family;
 
 public class Family {
     public static void main(String[] args) {
-        Father dad = new Father("Dad", 50, "Male");
-        Mother mum = new Mother("Mum", 47, "Female");
-        Child boy = new Child("Boy", 10, "Male");
-        Child girl = new Child("Girl", 5, "Female");
+        Parent dad = new Father("Dad", 50, "Male");
+        Parent mum = new Mother("Mum", 47, "Female");
+        Person boy = new Child("Boy", 10, "Male");
+        Person girl = new Child("Girl", 5, "Female");
+        Person[] children = {boy, girl};   
         
-        dad.printInfo();
-        mum.printInfo();
-        boy.printInfo();
-        girl.printInfo();
+        GatheredFamily myFamily = new GatheredFamily(dad, mum, children);
+        myFamily.familyInfo();
     }
     
 }
