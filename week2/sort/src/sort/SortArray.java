@@ -1,4 +1,3 @@
-
 package sort;
 
 public interface SortArray {
