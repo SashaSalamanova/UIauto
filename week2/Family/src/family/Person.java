@@ -19,31 +19,48 @@ public abstract class Person {
     public String getGender(){
         return gender;
     }
-    //Метод, одинаковый для любого человека
-    public void sayHi(){
-        System.out.println("Имя:"+ getName() );
-        System.out.println("Возраст:" + getAge() );
-        System.out.println("Пол:" + getGender() );
-   }
+    abstract public void sayHi();
 };
+
 abstract class Parent extends Person{
     public Parent(String name, int age, String gender){
         super(name, age, gender);
     }
-};
+};    
+
 class Father extends Parent{
     public Father(String name, int age, String gender){
     super(name, age, gender);
 }
+    @Override
+    public void sayHi(){
+        System.out.println("Папа:\nИмя:"+ getName() );
+        System.out.println("Возраст:" + getAge() );
+        System.out.println("Пол:" + getGender() );
+    }
 };
+
 class Mother extends Parent{
     public Mother(String name, int age, String gender){
     super(name, age, gender);
     }
+    @Override
+    public void sayHi(){
+        System.out.println("Мама:\nИмя:"+ getName() );
+        System.out.println("Возраст:" + getAge() );
+        System.out.println("Пол:" + getGender() );
+    }
 };
+
 class Child extends Person{
     //Конструктор
     public Child(String name, int age, String gender){
         super(name, age, gender);
+    }
+    @Override
+    public void sayHi(){
+        System.out.println("Ребенок:\nИмя:"+ getName() );
+        System.out.println("Возраст:" + getAge() );
+        System.out.println("Пол:" + getGender() );
     }
 };
