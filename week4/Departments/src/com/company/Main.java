@@ -16,7 +16,7 @@ public class Main {
         // Сортируем по названию факультетов в алфавитном порядке
         Collection <Student> sortedDepartments = students.stream()
                 .filter(distinctByKey(Student::getDepartment))
-                .sorted((o1,o2) -> o1.getDepartment().compareTo(o2.getDepartment()))
+                .sorted(Comparator.comparing(Student::getDepartment))
                 .collect(Collectors.toList());
         // Вывод названий факультетов по алфавиту
         System.out.println("Список факультетов по алфавиту");
