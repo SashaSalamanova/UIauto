@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: ShowMoreButtonTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.098 s <<< FAILURE! - in ShowMoreButtonTest
+pressShowMoreButtonDoubleArticlesCount(ShowMoreButtonTest)  Time elapsed: 0.098 s  <<< ERROR!
+java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at ShowMoreButtonTest.init(ShowMoreButtonTest.java:33)
+
+pressShowMoreButtonMoreThanOnce(ShowMoreButtonTest)  Time elapsed: 0.097 s  <<< ERROR!
+java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at ShowMoreButtonTest.init(ShowMoreButtonTest.java:33)
+
+pressOnceShowMoreButton(ShowMoreButtonTest)  Time elapsed: 0.097 s  <<< ERROR!
+java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at ShowMoreButtonTest.init(ShowMoreButtonTest.java:33)
+
