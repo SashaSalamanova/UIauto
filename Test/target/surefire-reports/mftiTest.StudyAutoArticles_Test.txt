@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: mftiTest.StudyAutoArticles_Test
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.219 s <<< FAILURE! - in mftiTest.StudyAutoArticles_Test
+clickAddReview(mftiTest.StudyAutoArticles_Test)  Time elapsed: 0.219 s  <<< ERROR!
+java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at mftiTest.StudyAutoArticles_Test.init(StudyAutoArticles_Test.java:23)
+

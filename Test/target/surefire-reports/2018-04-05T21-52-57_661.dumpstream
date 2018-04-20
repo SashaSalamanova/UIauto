@@ -1,0 +1,12 @@
+# Created on 2018-04-05T21:52:57.676
+Error: Could not create the Java Virtual Machine.
+
+# Created on 2018-04-05T21:52:57.676
+Error: A fatal exception has occurred. Program will exit.
+
+# Created on 2018-04-05T21:52:57.676
+Invalid maximum heap size: -Xmx9216m
+
+# Created on 2018-04-05T21:52:57.676
+The specified size exceeds the maximum representable size.
+
