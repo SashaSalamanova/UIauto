@@ -50,6 +50,10 @@
                     <useUnlimitedThreads>${useUnlimitedThreads}</useUnlimitedThreads>
                     <threadCountMethods>${thread.count}</threadCountMethods>
                     <argLine>-Xms1024m -Xmx9216m -Dfile.encoding=UTF-8</argLine>
+
+                    <systemPropertyVariables>
+                        <webdriver.domain.url>https://pets.mail.ru/news/</webdriver.domain.url>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
