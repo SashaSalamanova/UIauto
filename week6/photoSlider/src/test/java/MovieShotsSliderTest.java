@@ -1,4 +1,5 @@
 import components.AfishaElement;
+import components.TrailerAndShotsElement;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import pages.KinoMainPage;
 import pages.MoviePage;
+import pages.ShotPage;
 
 import java.util.Set;
 
@@ -58,6 +60,22 @@ public class MovieShotsSliderTest {
         String movieHeader = moviePage.getPageHeader();
         assertEquals("Названия фильмов не совпадают", title, movieHeader);
 
+        TrailerAndShotsElement trailerAndShotsElement = PageFactory.initElements(driver, TrailerAndShotsElement.class);
+        ShotPage shotPage = trailerAndShotsElement.clickFirstShot(); //Current Shot Page
+        String currShotPageUrl = shotPage.getDriver().getCurrentUrl();
+
+        ShotPage nextShotPage = shotPage.clickNextShotArrow();
+        String nextShotPageUrl = nextShotPage.getDriver().getCurrentUrl();
+        //Shot has changed
+        assertTrue("Кадр не сменился после клика вперед",
+                currShotPageUrl  != nextShotPageUrl);
+
+        ShotPage previousShotPage = shotPage.clickPreviousShotArrow();
+        String previousShotPageUrl = previousShotPage.getDriver().getCurrentUrl();
+        assertTrue("Кадр не сменился после клика назад",
+                previousShotPageUrl != nextShotPageUrl);
+        assertEquals("После нажатия вперед-назад не вернулись к исходному кадру",
+                currShotPageUrl, previousShotPageUrl);
 
     }
 

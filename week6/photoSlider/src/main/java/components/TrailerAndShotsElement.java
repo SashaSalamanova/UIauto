@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pages.MoviePage;
+import pages.ShotPage;
 
 import java.util.stream.Collectors;
 
@@ -25,11 +26,11 @@ public class TrailerAndShotsElement {
 
     private final String movieShotsLocator = "//a[contains(@data-share-url, '/shot/') and not(contains(@tabindex, '-1'))]";
 
-    /*public MoviePage clickFirstShot(){
+    public ShotPage clickFirstShot(){
         WebElement firstShot = driver.findElements(By.xpath(movieShotsLocator)).stream()
                 .collect(Collectors.toList()).get(0);
         firstShot.click();
-        return PageFactory.initElements(driver, MoviePage.class);
-    }*/
+        return PageFactory.initElements(driver, ShotPage.class);
+    }
 
 }

@@ -15,8 +15,6 @@ public class KinoMainPage extends BasePage{
     private WebDriver driver = super.getDriver();
     private String pageUrl = System.getProperty("domain.url");
     private Pattern pagePattern = Pattern.compile("https://kino.mail.ru");
-    @FindBy(tagName = "h1")
-    private WebElement header;
 
     public KinoMainPage open(){
         driver.get(pageUrl);
