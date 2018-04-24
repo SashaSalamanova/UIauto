@@ -14,7 +14,7 @@ public class UrlCollectPage extends BasePage {
 
     private WebDriver driver = super.getDriver();
     private String pageUrl = System.getProperty("webdriver.url.collect");
-    @FindBy(xpath = "//a[contains(@href, 'mail.ru') or starts-with(@href, '/') or @href = '#']")
+    @FindBy(xpath = "//a[contains(@href, 'mail.ru') or not(starts-with(@href, 'http'))]")
     private List<WebElement> referenceLinks;
     @FindBy(tagName = "a")
     private List<WebElement> externalLinks;

@@ -39,6 +39,7 @@ public class HelpPetsElement {
         return PageFactory.initElements(driver, PetsArticlePage.class);
     }
 
+
     public boolean isComponentPresent() {
         return component.isDisplayed();
     }

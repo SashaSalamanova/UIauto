@@ -11,9 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class PetsNewsPage extends BasePage {
-    private WebDriver driver = null;
+
+    public PetsNewsPage(WebDriver driver){
+        super(driver);
+    }
+    private WebDriver driver = super.getDriver();
     private String pageUrl = System.getProperty("webdriver.domain.url");
-    private Wait wait = new WebDriverWait(super.getDriver(),
+    private Wait wait = new WebDriverWait(driver,
             20).withMessage("Время ожидания превышено");
 
     @FindBy(css = ".js-pgng_more_link")
@@ -21,12 +25,8 @@ public class PetsNewsPage extends BasePage {
 
     private List<WebElement> articlesDisplayed;
 
-    public PetsNewsPage(WebDriver driver){
-        super(driver);
-    }
-
     public PetsNewsPage open(){
-        super.getDriver().get(pageUrl);
+        driver.get(pageUrl);
         return this;
     }
     public void clickShowMoreButton(){
@@ -37,7 +37,7 @@ public class PetsNewsPage extends BasePage {
     }
 
     public List<WebElement> getArticlesDisplayed(){
-        articlesDisplayed = super.getDriver().findElements(By.cssSelector(".js-pgng_item"));
+        articlesDisplayed = driver.findElements(By.cssSelector(".js-pgng_item"));
         return articlesDisplayed ;
     }
 

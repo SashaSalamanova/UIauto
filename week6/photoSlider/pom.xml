@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>urlsCollector</groupId>
-    <artifactId>urlsCollector</artifactId>
-    <version>1.0</version>
+    <groupId>photoSlider</groupId>
+    <artifactId>photoSlider</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <junit.version>4.12</junit.version>
@@ -52,8 +52,7 @@
                     <argLine>-Xms1024m -Xmx9216m -Dfile.encoding=UTF-8</argLine>
 
                     <systemPropertyVariables>
-                        <webdriver.url.collect>https://pets.mail.ru/</webdriver.url.collect>
-                        <webdriver.result.collector>result.txt</webdriver.result.collector>
+                        <domain.url>https://kino.mail.ru/</domain.url>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -70,6 +69,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
