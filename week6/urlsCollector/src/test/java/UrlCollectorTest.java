@@ -46,11 +46,11 @@ public class UrlCollectorTest {
 
         try {
             FileWriter writer = new FileWriter(System.getProperty("webdriver.result.collector"), false);
-            writer.write(referenceLinks.size() + "\n");
+            writer.write("Внутренние ссылки (найдено" + referenceLinks.size() + ")\n");
             for(int i = 0; i < referenceLinks.size(); i++) {
                 writer.write(referenceLinks.get(i).getAttribute("href") + "\n");
             }
-            writer.write(externalLinks.size() + "\n");
+            writer.write("Внешние ссылки (найдено " + externalLinks.size() + ")\n");
             for(int i = 0; i < externalLinks.size(); i++) {
                 writer.write(externalLinks.get(i).getAttribute("href") + "\n");
             }
