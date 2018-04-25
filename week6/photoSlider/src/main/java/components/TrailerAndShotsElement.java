@@ -17,7 +17,7 @@ public class TrailerAndShotsElement {
     public TrailerAndShotsElement(WebDriver driver) {
         this.driver = driver;
     }
-    @FindBy(css = "..block_posrel")
+    @FindBy(css = ".block_posrel")
     private WebElement component;
 
     public boolean isComponentPresent() {
