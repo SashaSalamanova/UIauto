@@ -10,12 +10,4 @@ public class MoviePage extends BasePage{
     }
 
     private WebDriver driver = super.getDriver();
-
-    @FindBy(tagName = "h1")
-    private WebElement header;
-
-    public String getPageHeader(){
-        return header.getText();
-    }
-
 }

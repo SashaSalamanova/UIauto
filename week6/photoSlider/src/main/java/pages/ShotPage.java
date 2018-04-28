@@ -13,14 +13,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ShotPage extends BasePage{
+
     public ShotPage(WebDriver driver){
         super(driver);
     }
 
     private WebDriver driver = super.getDriver();
     private Pattern pagePattern = Pattern.compile("https://kino.mail.ru/shot/" + "\\d+");
+
     @FindBy(css = ".viewbox__control_next")
     private WebElement nextShotArrow;
+
     @FindBy(css = ".viewbox__control_previous")
     private WebElement previousShotArrow;
 

@@ -17,6 +17,7 @@ public class TrailerAndShotsElement {
     public TrailerAndShotsElement(WebDriver driver) {
         this.driver = driver;
     }
+
     @FindBy(css = ".block_posrel")
     private WebElement component;
 
@@ -27,8 +28,9 @@ public class TrailerAndShotsElement {
     private final String movieShotsLocator = "//a[contains(@data-share-url, '/shot/') and not(contains(@tabindex, '-1'))]";
 
     public ShotPage clickFirstShot(){
+
         WebElement firstShot = driver.findElements(By.xpath(movieShotsLocator)).stream()
-                .collect(Collectors.toList()).get(0);
+                                .collect(Collectors.toList()).get(0);
         firstShot.click();
         return PageFactory.initElements(driver, ShotPage.class);
     }

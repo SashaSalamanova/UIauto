@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class KinoMainPage extends BasePage{
+
     public KinoMainPage (WebDriver driver){
         super(driver);
     }
