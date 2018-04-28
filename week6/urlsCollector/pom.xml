@@ -53,7 +53,7 @@
 
                     <systemPropertyVariables>
                         <webdriver.url.collect>https://pets.mail.ru/</webdriver.url.collect>
-                        <webdriver.result.collector>result.txt</webdriver.result.collector>
+                        <webdriver.result.collector>${project.build.directory}/collected-urls/result.txt</webdriver.result.collector>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

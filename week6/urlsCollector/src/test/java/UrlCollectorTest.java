@@ -50,7 +50,7 @@ public class UrlCollectorTest {
             for(int i = 0; i < referenceLinks.size(); i++) {
                 writer.write(referenceLinks.get(i).getAttribute("href") + "\n");
             }
-            writer.write("Внешние ссылки (найдено " + externalLinks.size() + ")\n");
+            writer.write("\n" + "Внешние ссылки (найдено " + externalLinks.size() + ")\n");
             for(int i = 0; i < externalLinks.size(); i++) {
                 writer.write(externalLinks.get(i).getAttribute("href") + "\n");
             }
