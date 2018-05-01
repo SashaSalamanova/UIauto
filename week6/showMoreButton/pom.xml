@@ -20,6 +20,8 @@
         <useUnlimitedThreads>true</useUnlimitedThreads>
         <thread.count>5</thread.count>
 
+        <webdriver.timeouts.implicitlywait>60</webdriver.timeouts.implicitlywait>
+
     </properties>
     <dependencies>
         <dependency>
@@ -53,6 +55,7 @@
 
                     <systemPropertyVariables>
                         <webdriver.domain.url>https://pets.mail.ru/news/</webdriver.domain.url>
+                        <webdriver.timeouts.implicitlywait>${webdriver.timeouts.implicitlywait}</webdriver.timeouts.implicitlywait>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

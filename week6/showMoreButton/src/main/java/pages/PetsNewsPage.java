@@ -17,8 +17,8 @@ public class PetsNewsPage extends BasePage {
     }
     private WebDriver driver = super.getDriver();
     private String pageUrl = System.getProperty("webdriver.domain.url");
-    private Wait wait = new WebDriverWait(driver,
-            60).withMessage("Время ожидания превышено");
+    private Wait wait = new WebDriverWait(driver, Long.parseLong(System.getProperty("webdriver.timeouts.implicitlywait")))
+                            .withMessage("Время ожидания превышено");
 
     @FindBy(css = ".js-pgng_more_link")
     private WebElement showMoreButton;
