@@ -17,35 +17,40 @@ public class InstagramFrameComponent {
     public InstagramFrameComponent(WebDriver driver) {
         this.driver = driver;
     }
-    private WebElement rightPhotoArrow;
-    private WebElement leftPhotoArrow;
     private String instaFrameLocator = "//iframe[contains(@class, 'instagram-media-rendered')]";
 
+    @FindBy(css = ".coreSpriteRightChevron")
+    private WebElement rightArrow;
+
+    @FindBy(css = ".coreSpriteLeftChevron")
+    private WebElement leftArrow;
+
+    @FindBy(xpath = "//div[contains(@class, 'EmbedSidecar')]/div/div/div/div/img")
+    private WebElement imageSrc;
+
     public void switchToInstaFrame(){
-        wait = new WebDriverWait(driver,300).withMessage("Время ожидания превышено");
+        wait = new WebDriverWait(driver,  Long.parseLong(System.getProperty("webdriver.timeouts.implicitlywait"))).withMessage("Время ожидания превышено");
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(instaFrameLocator)));
     }
 
     public boolean isRightArrowPresent(){
-        return driver.findElement(By.cssSelector(".coreSpriteRightChevron")).isEnabled();
+        return rightArrow.isEnabled();
     }
+
     public void clickRightArrow(){
-        rightPhotoArrow = driver.findElement(By.cssSelector(".coreSpriteRightChevron"));
-        rightPhotoArrow.click();
+        rightArrow.click();
     }
 
     public boolean isLeftArrowPresent(){
-        return driver.findElement(By.cssSelector(".coreSpriteLeftChevron")).isEnabled();
+        return leftArrow.isEnabled();
     }
 
     public void clickLeftArrow(){
-        leftPhotoArrow = driver.findElement(By.cssSelector(".coreSpriteLeftChevron"));
-        leftPhotoArrow.click();
+        leftArrow.click();
     }
 
     public String getImageSrc(){
-        return driver.findElement(By.xpath("//div[contains(@class, 'EmbedSidecar')]/div/div/div/div/img"))
-                .getAttribute("src");
+        return imageSrc.getAttribute("src");
     }
 
 }

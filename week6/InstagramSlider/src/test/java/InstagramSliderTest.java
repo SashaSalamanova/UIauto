@@ -35,11 +35,17 @@ public class InstagramSliderTest {
     }
 
     @Test
-    public void instagramSliderCheck (){
+    public void instagramSliderPageCheck (){
 
         //Страница с новостью
         IncidentPage incidentPage = PageFactory.initElements(driver, IncidentPage.class);
         incidentPage.open();
+
+        //Проверка того, что открылась верная страница
+        assertTrue("У страницы неверный URL", incidentPage.isPageCheck());
+
+        String title = "СМИ: грузовик въехал в группу людей в Мюнстере, три человека погибли";
+        assertEquals("На странице неверный заголовок", title, incidentPage.getPageHeader());
 
         //Компонента, содержащая врез инстаграма
         InstagramFrameComponent instagramFrameComponent = PageFactory.initElements(driver, InstagramFrameComponent.class);
@@ -67,6 +73,7 @@ public class InstagramSliderTest {
     //Проверка отсутсвия стрелочек там, где их быть не должно
     @Test(expected = WebDriverException.class)
     public void onFirstPhotoLeftArrowIsNotPresent(){
+
         IncidentPage incidentPage = PageFactory.initElements(driver, IncidentPage.class);
         incidentPage.open();
         InstagramFrameComponent instagramFrameComponent = PageFactory.initElements(driver, InstagramFrameComponent.class);
@@ -79,6 +86,7 @@ public class InstagramSliderTest {
     //Пролистываем фото до конца, проверяем что стрелка "Вперед" отсутствует
     @Test(expected = WebDriverException.class)
     public void onLastPhotoRightArrowIsNotPresent(){
+
         IncidentPage incidentPage = PageFactory.initElements(driver, IncidentPage.class);
         incidentPage.open();
         InstagramFrameComponent instagramFrameComponent = PageFactory.initElements(driver, InstagramFrameComponent.class);
